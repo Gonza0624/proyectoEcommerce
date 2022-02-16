@@ -1,0 +1,59 @@
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(
+        -60deg,
+        rgba(255, 255, 255, 0.178) 50%,
+        #94d83b 50%
+    );
+    bottom: 0;
+    left: -50%;
+    opacity: 0.5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+/* contenido de la portada */
+.content {
+    margin: 0px auto;
+    width: 55%;
+    margin-top: 80px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* logo */
+.logo {
+    width: 170px;
+    height: 170px;
+    border-radius: 150px;
+    margin-right: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* titulo de la portada */
+.titulo_portada {
+    font-family: Arial;
+    font-size: 30px;
+    padding: 20px;
+    color: #363030;
+    text-shadow: 0px 0px 9px #65665f;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
