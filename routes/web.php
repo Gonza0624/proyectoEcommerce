@@ -31,7 +31,9 @@ Route::get('/main', mainController::class);
 Route::get('/home', portadaController::class);
 
 // Usuarios
-Route::get('/users', usersController::class);
+Route::get('/users', [usersController::class, 'index']);
+Route::get('/users/crear', [usersController::class, 'crear']) ->name('users.crear');
+Route::post('/users/guardar', [usersController::class, 'guardar']) ->name('users.guardar');
 
 // Consulta Productos
 Route::get('/consultaProducto', productosController::class);

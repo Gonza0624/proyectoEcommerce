@@ -34,7 +34,7 @@
     <div class="menu__side" id="menu_side">
 
         <div class="name__page">
-            <img style="width: 30px; height: 30px; border-radius: 15px; margin-right:10px;" src="img/logo/logoo.jpeg" alt="">
+            <img style="width: 30px; height: 30px; border-radius: 15px; margin-right:10px;" src="{{ asset('img/logo/logo.jpeg')}}" alt="">
             <h4>BuyTheFuture</h4>
         </div>
 
