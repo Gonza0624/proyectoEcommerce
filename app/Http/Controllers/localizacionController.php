@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class portadaController extends Controller
+class localizacionController extends Controller
 {
     public function __invoke()
     {
-        return view('portada/portada');
+        return view('localizacion/index');
     }
 }

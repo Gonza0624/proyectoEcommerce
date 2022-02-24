@@ -47,28 +47,28 @@
                 </div>
             </a>
 
-            <a href="{{ url('users') }}">
+            <a href="{{ route('users') }}">
                 <div class="option">
                     <i class="far fa-user"></i>
                     <h4>Usuarios</h4>
                 </div>
             </a>
 
-            <a href="{{url('consultaProducto') }}">
+            <a href="{{ route('productos') }}">
                 <div class="option">
                     <i class="fas fa-shopping-basket"></i>
                     <h4>Productos</h4>
                 </div>
             </a>
 
-            <a href="consultaPedido.php">
+            <a href="{{ route('pedidos') }}">
                 <div class="option">
                     <i class="fas fa-dolly"></i>
                     <h4>Pedidos</h4>
                 </div>
             </a>
 
-            <a href="consultaLocalizacion.php">
+            <a href="{{ route('localizacion') }}">
                 <div class="option">
                     <i class="fas fa-globe-americas"></i>
                     <h4>Localizacion</h4>

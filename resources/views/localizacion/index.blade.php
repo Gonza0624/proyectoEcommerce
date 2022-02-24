@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
-@section('titulo', 'consultaProductos')
+@section('titulo', 'Localizacion')
 
 @section('contenido')
-<h2>Productos</h2>
+<h2>Localizacion</h2>
 @stop
