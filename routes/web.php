@@ -36,6 +36,8 @@ Route::get('/home', portadaController::class);
 Route::get('/users', [usersController::class, 'index'])->name('users');
 Route::get('/users/crear', [usersController::class, 'crear'])->name('users.crear');
 Route::post('/users/guardar', [usersController::class, 'guardar'])->name('users.guardar');
+Route::get('/users/{id}', [usersController::class, 'detalle'])->name('users.detalle');
+Route::get('/users/borrar/{id}', [usersController::class, 'eliminar'])->name('users.eliminar');
 
 // Productos
 Route::get('/productos', productosController::class)->name('productos');

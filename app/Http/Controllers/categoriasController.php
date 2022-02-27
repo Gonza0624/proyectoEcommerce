@@ -6,26 +6,31 @@ use Illuminate\Http\Request;
 
 class categoriasController extends Controller
 {
-    public function celulares(){
+    public function celulares()
+    {
         return view('categorias/celulares');
     }
 
-    public function consolas(){
+    public function consolas()
+    {
         return view('categorias/consolas');
     }
 
 
-    public function computadores(){
+    public function computadores()
+    {
         return view('categorias/computadores');
     }
 
 
-    public function camaras(){
+    public function camaras()
+    {
         return view('categorias/camaras');
     }
 
 
-    public function drones(){
+    public function drones()
+    {
         return view('categorias/drones');
     }
 }

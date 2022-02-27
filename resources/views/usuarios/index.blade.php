@@ -4,20 +4,29 @@
 
 @section('contenido')
 
-<h2>Registro de usuarios</h2>
+    <h2 class="mb-5">Registro de usuarios</h2>
 
-<table class="table table-success table-striped">
+    <table style="text-align: center;" class="table table-striped table-hover">
 
-    @foreach ($usuarios as $usu)
-    <tr>
-        <th scope="row">{{$usu -> id}}</th>
-        <td>{{$usu -> name}}</td>
-        <td>{{$usu -> email}}</td>
-    </tr>
-    @endforeach
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Detalle</th>
+        <th scope="col">Eliminar</th>
 
-</table>
-<br/>
-<button onclick="location.href='{{ url('users/crear')}}'" type="button" class="btn btn-outline-success">Crear usuario</button>
+        @foreach ($usuarios as $usu)
+            <tr>
+                <th scope="col">{{ $usu->id }}</th>
+                <td>{{ $usu->nombre }}</td>
+                <td>{{ $usu->correo }}</td>
+                <td><a class="btn btn-primary" href="{{ route('users.detalle', $usu->id) }}">Detalle</a></td>
+                <td><a class="btn btn-danger" href="{{ route('users.eliminar', $usu->id) }}">Eliminar</a></td>
+            </tr>
+        @endforeach
+
+    </table>
+    <br />
+    <button style="width: 100%" id="btn" onclick="location.href='{{ url('users/crear') }}'" type="button"
+        class="btn btn-outline-success">Crear usuario</button>
 
 @stop

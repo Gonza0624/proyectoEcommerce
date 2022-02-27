@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo')</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('CSS/layout.css')}}">
+    <link rel="stylesheet" href="{{ asset('CSS/layout.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('CSS/ajustes.css') }}">
 
     @yield('css')
 
@@ -18,7 +21,9 @@
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="main.css"> -->
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 
 <body id="body">
@@ -34,7 +39,8 @@
     <div class="menu__side" id="menu_side">
 
         <div class="name__page">
-            <img style="width: 30px; height: 30px; border-radius: 15px; margin-right:10px;" src="{{ asset('img/logo/logo.jpeg')}}" alt="">
+            <img style="width: 30px; height: 30px; border-radius: 15px; margin-right:10px;"
+                src="{{ asset('img/logo/logo.jpeg') }}" alt="">
             <h4>BuyTheFuture</h4>
         </div>
 
@@ -92,7 +98,8 @@
         <div>
             <a href="{{ url('categorias/celulares') }}">
                 <div class="option">
-                    <img class="efectoNav" style="padding: 15px;" src="{{asset('img/barra de navegacion/celular.png')}}" alt="">
+                    <img class="efectoNav" style="padding: 15px;"
+                        src="{{ asset('img/barra de navegacion/celular.png') }}" alt="">
                 </div>
             </a>
         </div>
@@ -100,7 +107,8 @@
         <div>
             <a href="{{ url('categorias/consolas') }}">
                 <div class="option">
-                    <img class="efectoNav" style="padding: 15px;" src="{{asset('img/barra de navegacion/consolas.png')}}" alt="">
+                    <img class="efectoNav" style="padding: 15px;"
+                        src="{{ asset('img/barra de navegacion/consolas.png') }}" alt="">
                 </div>
             </a>
         </div>
@@ -108,7 +116,8 @@
         <div>
             <a href="{{ url('categorias/computadores') }}">
                 <div class="option">
-                    <img class="efectoNav" style="padding: 15px;" src="{{asset('img/barra de navegacion/computadora.png')}}" alt="">
+                    <img class="efectoNav" style="padding: 15px;"
+                        src="{{ asset('img/barra de navegacion/computadora.png') }}" alt="">
                 </div>
             </a>
         </div>
@@ -116,7 +125,8 @@
         <div>
             <a href="{{ url('categorias/camaras') }}">
                 <div class="option">
-                    <img class="efectoNav" style="padding: 15px;" src="{{asset('img/barra de navegacion/camara.png')}}" alt="">
+                    <img class="efectoNav" style="padding: 15px;"
+                        src="{{ asset('img/barra de navegacion/camara.png') }}" alt="">
                 </div>
             </a>
         </div>
@@ -124,14 +134,17 @@
         <div>
             <a href="{{ url('categorias/drones') }}">
                 <div class="option">
-                    <img class="efectoNav" style="padding: 15px;" src="{{asset('img/barra de navegacion/drones.png')}}" alt="">
+                    <img class="efectoNav" style="padding: 15px;"
+                        src="{{ asset('img/barra de navegacion/drones.png') }}" alt="">
                 </div>
             </a>
         </div>
 
     </div>
 
-    @yield('contenido')
+    <div class="mainContainer">
+        @yield('contenido')
+    </div>
 
     <div class="social-bar">
         <a href="#" class="icon icon-facebook"></a>
@@ -140,7 +153,7 @@
         <a href="#" class="icon icon-instagram"></a>
     </div>
 
-    <script src="{{ asset('js/main.js')}}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

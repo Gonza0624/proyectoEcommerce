@@ -1,0 +1,30 @@
+.mainContainer {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.form {
+    margin: 0px auto;
+    width: 60%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 4%;
+}
+
+.enlace {
+    text-align: center;
+    color: #b1db17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    color: #c4eb37;
+}

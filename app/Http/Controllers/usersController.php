@@ -7,44 +7,43 @@ use App\Models\usuarios;
 
 class usersController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $usuarios = usuarios::all();
         return view('usuarios/index', compact('usuarios'));
     }
 
-    public function crear(){
-       return view('usuarios.crear');
+    public function crear()
+    {
+        return view('usuarios.crear');
     }
 
-    public function guardar(Request $request){
-
+    public function guardar(Request $request)
+    {
         // dd($request);
-        $nombreContraller= $request['nombre'];
-        $correoContraller= $request['correo'];
-
-        // $correo = $request -> id;
-
-        // dd($request);
-
+        $nombreContraller = $request['nombre'];
+        $correoContraller = $request['correo'];
 
         $usuario = new usuarios();
-        $usuario -> name = $nombreContraller;
-        $usuario -> email = $correoContraller;
-        // $usuario->identificacion = $identificacion;
+        $usuario->nombre = $nombreContraller;
+        $usuario->correo = $correoContraller;
         $usuario->save();
+        
+        return redirect('/users');
+    }
 
+    public function detalle($id)
+    {
+        $detalle = usuarios::find($id);
+        return view('usuarios.detalle', compact('detalle'));
+    }
+
+    public function eliminar($id)
+    {
+        $usu = usuarios::find($id);
+
+        $usu->delete();
 
         return redirect('/users');
-
-        // $usuarios = usuarios ::all();
-        // return(view('usuarios.index', compact('usuarios')));
-
-        // $producto = new Producto();
-        // $producto->id_usuario = $usuario->id;
-
-
-        // dd($request['correo']);
-        // return view('usuarios.guardar');
-
-     }
+    }
 }
