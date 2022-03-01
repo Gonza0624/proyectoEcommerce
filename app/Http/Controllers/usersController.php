@@ -28,7 +28,7 @@ class usersController extends Controller
         $usuario->nombre = $nombreContraller;
         $usuario->correo = $correoContraller;
         $usuario->save();
-        
+
         return redirect('/users');
     }
 
@@ -36,6 +36,7 @@ class usersController extends Controller
     {
         $detalle = usuarios::find($id);
         return view('usuarios.detalle', compact('detalle'));
+
     }
 
     public function eliminar($id)
@@ -43,6 +44,27 @@ class usersController extends Controller
         $usu = usuarios::find($id);
 
         $usu->delete();
+
+        return redirect('/users');
+    }
+
+    public function editar($id)
+    {
+        $detalle = usuarios::find($id);
+        return view('usuarios.editar', compact('detalle'));
+    }
+
+    public function guardar_edit(Request $request, $id)
+    {
+        // dd($request);
+        $nombreContraller = $request['nombre'];
+        $correoContraller = $request['correo'];
+
+        // $usuarioAct = new usuarios();
+        $actualizado=usuarios::whereId($id)->firstOrFail();
+        $actualizado->nombre = $nombreContraller;
+        $actualizado->correo = $correoContraller;
+        $actualizado->save();
 
         return redirect('/users');
     }

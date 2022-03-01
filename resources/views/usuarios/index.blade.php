@@ -12,7 +12,6 @@
         <th scope="col">Nombre</th>
         <th scope="col">Correo</th>
         <th scope="col">Detalle</th>
-        <th scope="col">Eliminar</th>
 
         @foreach ($usuarios as $usu)
             <tr>
@@ -20,7 +19,6 @@
                 <td>{{ $usu->nombre }}</td>
                 <td>{{ $usu->correo }}</td>
                 <td><a class="btn btn-primary" href="{{ route('users.detalle', $usu->id) }}">Detalle</a></td>
-                <td><a class="btn btn-danger" href="{{ route('users.eliminar', $usu->id) }}">Eliminar</a></td>
             </tr>
         @endforeach
 
@@ -28,5 +26,4 @@
     <br />
     <button style="width: 100%" id="btn" onclick="location.href='{{ url('users/crear') }}'" type="button"
         class="btn btn-outline-success">Crear usuario</button>
-
 @stop

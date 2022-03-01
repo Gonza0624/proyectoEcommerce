@@ -179,7 +179,7 @@ a.selected {
 
 /* cambiar el color del texto seleccionado con el mouse */
 ::selection {
-    background: #4da836; /*Color naranja para el fondo*/
+    background: #7aca1f; /*Color naranja para el fondo*/
     color: #fff; /*Color blanco para las letras*/
 }
 
