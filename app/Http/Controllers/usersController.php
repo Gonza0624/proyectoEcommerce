@@ -39,12 +39,9 @@ class usersController extends Controller
 
     }
 
-    public function eliminar($id)
+    public function eliminar(usuarios $id)
     {
-        $usu = usuarios::find($id);
-
-        $usu->delete();
-
+        $id->delete();
         return redirect('/users');
     }
 
