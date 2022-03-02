@@ -73,7 +73,28 @@ Route::delete('/users/{id}/eliminar', [usersController::class, 'eliminar'])->nam
 // ============ Productos ============
 
 // Vista principal de todos los productos en la tabla
-Route::get('/productos', productosController::class)->name('productos');
+Route::get('/productos', [productosController::class, 'index'])->name('productos');
+
+// Crear productos
+Route::get('/productos/crear', [productosController::class, 'crear'])->name('productos.crear');
+
+// Guardar los datos del producto que estamos creando
+Route::post('/productos/guardar', [productosController::class, 'guardar'])->name('productos.guardar');
+
+// Mostrar el detalle del producto
+Route::get('/productos/{id}/detalle', [productosController::class, 'detalle'])->name('productos.detalle');
+
+// Guardar los datos del producto que estamos creando
+Route::post('/productos/guardar', [productosController::class, 'guardar'])->name('productos.guardar');
+
+// Editar productos
+Route::get('/productos/{id}/editar', [productosController::class, 'editar'])->name('productos.editar');
+
+// Guardar los datos del usuario que estamos editando
+Route::post('/productos/{id}/guardar_edit', [productosController::class, 'guardar_edit'])->name('productos.guardar_edit');
+
+// Eliminar productos
+Route::delete('/productos/{id}/eliminar', [productosController::class, 'eliminar'])->name('productos.eliminar');
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
