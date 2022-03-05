@@ -81,12 +81,14 @@
                 </div>
             </a>
 
-            <a href="salir.php">
-                <div class="option">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <h4>Salir</h4>
-                </div>
-            </a>
+            <form action="" method="GET">
+                <a href="{{ route('cerrar_sesion') }}" onclick="this.closest('form').submit()">
+                    <div class="option">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <h4>Salir</h4>
+                    </div>
+                </a>
+            </form>
 
         </div>
 
