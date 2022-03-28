@@ -5,7 +5,7 @@
 @section('contenido')
 
     <div class="form">
-        <form action="{{ Route('productos.guardar_edit', $detalle->id) }}" method="POST">
+        <form action="{{ Route('productos.guardar_edit', $detalle->id) }}" class="formEditar" method="POST">
             @csrf
 
             <div>
@@ -29,7 +29,7 @@
                     <div class="col-md-12">
                         <!--elementos del formulario -->
                         <label for="exampleInputEmail1" class="form-label">Precio</label>
-                        <input name="precio" placeholder="Ingresa el precio" type="number" class="form-control" value="{{$detalle->precio}}">
+                        <input name="precio_venta" placeholder="Ingresa el precio" type="number" class="form-control" value="{{$detalle->precio_venta}}">
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!--elementos del formulario -->
-                        <button style="width: 100%" id="btn" type="submit" class="btn btn-success">Enviar</button>
+                        <button style="width: 100%" id="btn"  class="btn btn-success">Enviar</button>
                     </div>
                 </div>
             </div>
@@ -49,4 +49,24 @@
         </form>
     </div>
 
+@stop
+
+@section('js')
+    <script>
+        $('.formEditar').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Deseas guardar los cambios?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, guardar!'
+            }).then((result) => {
+                if (result.isConfirmed) { //result.value
+                    this.submit();
+                }
+            })
+        });
+    </script>
 @stop

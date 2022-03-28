@@ -10,8 +10,10 @@ use App\Http\Controllers\productosController;
 use App\Http\Controllers\pedidosController;
 use App\Http\Controllers\localizacionController;
 use App\Http\Controllers\cerrarController;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\usController;
 
-/*
+/*|
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -22,11 +24,17 @@ use App\Http\Controllers\cerrarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[FrontController::class,'index'])->name('main');
+Route::get('/detalle/{id}',[FrontController::class,'detalle'])->name('detalle');
+Route::get('/categorias/{nombre}', [App\Http\Controllers\FrontController::class, 'traercategoria'])->name('categoriasproductos');
 
 Auth::routes();
+
+Route::get('/us', [usController::class, 'us'])->name('us');
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -91,19 +99,21 @@ Route::get('/productos/crear', [productosController::class, 'crear'])->name('pro
 Route::post('/productos/guardar', [productosController::class, 'guardar'])->name('productos.guardar');
 
 // Mostrar el detalle del producto
-Route::get('/productos/{id}/detalle', [productosController::class, 'detalle'])->name('productos.detalle');
+Route::get('/productos/{id_pro}/detalle', [productosController::class, 'detalle'])->name('productos.detalle');
 
 // Guardar los datos del producto que estamos creando
 Route::post('/productos/guardar', [productosController::class, 'guardar'])->name('productos.guardar');
 
 // Editar productos
-Route::get('/productos/{id}/editar', [productosController::class, 'editar'])->name('productos.editar');
+Route::get('/productos/{jumama}/editar', [productosController::class, 'editar'])->name('productos.editar');
 
 // Guardar los datos del usuario que estamos editando
 Route::post('/productos/{id}/guardar_edit', [productosController::class, 'guardar_edit'])->name('productos.guardar_edit');
 
 // Eliminar productos
 Route::delete('/productos/{id}/eliminar', [productosController::class, 'eliminar'])->name('productos.eliminar');
+
+// 
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -113,7 +123,9 @@ Route::delete('/productos/{id}/eliminar', [productosController::class, 'eliminar
 // ============ PEDIDOS ============
 
 // Vista principal de todos los pedidos en la tabla
-Route::get('/pedidos', pedidosController::class)->name('pedidos');
+Route::get('/pedidos', [pedidosController::class, "index"])->name('pedidos');
+Route::get('/pedidos/crear', [pedidosController::class, 'crear'])->name('pedidos.crear');
+Route::post('/pedidos/guardar', [pedidosController::class, 'guardar'])->name('pedidos.guardar');
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@
 @section('contenido')
 
     <div class="form">
-        <form action="{{ Route('productos.guardar') }}" method="POST">
+        <form action="{{ Route('productos.guardar') }}" class="formCrear" method="POST">
             @csrf
 
             <div>
@@ -29,7 +29,29 @@
                     <div class="col-md-12">
                         <!--elementos del formulario -->
                         <label for="exampleInputEmail1" class="form-label">Precio</label>
-                        <input name="precio" placeholder="Ingresa el precio" type="number" class="form-control">
+                        <input name="precio_venta" placeholder="Ingresa el precio" type="number" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--elementos del formulario -->
+                        <label for="exampleInputEmail1" class="form-label">Selecciona Categoria</label>
+                        <select class="form-select" aria-label="Default select example" name="categorias_id">
+                            <option selected>Open this select menu</option>
+                            @foreach ($categoria as $cat )
+                                <option value="{{$cat->id}}">{{$cat->nombre_categoria}}</option>
+                            @endforeach
+                          </select>
+                        {{-- <select class="formControl" name="categorias_id"> 
+                            @foreach ($categoria as $cat )
+                                <option value="{{$cat->id}}">{{$cat->nombre_categoria}}</option>
+                            @endforeach
+                        </select> --}}
                     </div>
                 </div>
             </div>
@@ -49,4 +71,24 @@
         </form>
     </div>
 
+@stop
+
+@section('js')
+    <script>
+        $('.formCrear').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: '¿Deseas crear este nuevo registro?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, guardar!'
+            }).then((result) => {
+                if (result.isConfirmed) { //result.value
+                    this.submit();
+                }
+            })
+        });
+    </script>
 @stop
